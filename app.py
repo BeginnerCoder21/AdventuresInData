@@ -1,6 +1,7 @@
 import streamlit as st
 import bank
 import laptop_ui
+import house_ui
 
 def run_bank_customer_churn():
     bank.run()
@@ -8,7 +9,10 @@ def run_bank_customer_churn():
 def run_laptop_price_prediction():
     laptop_ui.run()
 
-selected_project = st.sidebar.radio("Select Project", ["Home", "Laptop Price Prediction","Bank Customer Churn"])
+def run_house_price_prediction():
+    house_ui.run()
+
+selected_project = st.sidebar.radio("Select Project", ["Home", "Laptop Price Prediction","Bank Customer Churn","House Price Prediction"])
 
 if selected_project == "Home":
     st.subheader("Hello 🙌")
@@ -21,3 +25,6 @@ if selected_project == "Bank Customer Churn":
     run_bank_customer_churn()
 elif selected_project == "Laptop Price Prediction":
     run_laptop_price_prediction()
+elif selected_project == "House Price Prediction":
+    run_house_price_prediction()
+
